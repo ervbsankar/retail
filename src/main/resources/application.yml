@@ -1,0 +1,39 @@
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      host: ec2-54-210-55-85.compute-1.amazonaws.com
+      port: 27017
+      username: apiuser
+      password: target
+      authentication-database: target
+      database: target
+  product:
+    api: http://redsky.target.com/v2/pdp/tcin/
+    param: ?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics
+
+---
+spring:
+  profiles: prod
+  data:
+    mongodb:
+      host:
+      port:
+      username:
+      password:
+      authentication-database:
+      database:
+  product:
+    api:
+---
+spring:
+     profiles:
+       active: dev
+---
+spring:
+     devtools:
+       restart:
+         enabled: true
+       livereload:
+         enabled: false
+---
